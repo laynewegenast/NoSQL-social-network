@@ -29,7 +29,7 @@ const thoughtsController = {
     },
 
     createThought({ params, body}, res) {
-        Thoughts.create(body)
+        Thoughts.create({body})
         .then(({ _id }) => {
             return User.findOneAndUpdate(
                 { _id: params.userId },
